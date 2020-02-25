@@ -1,5 +1,2 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+@use 'base.scss';
+@use 'components/calculator.scss';
