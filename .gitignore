@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Projectspecific ignores
+.DS_Store
+.prettierrc
+.now
+.vscode
