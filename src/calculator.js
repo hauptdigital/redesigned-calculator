@@ -1,3 +1,8 @@
+const calculatorOutput = document.querySelector("#result");
+const calculatorControls = document.querySelectorAll(
+  ".calculator__input, .calculator__operator"
+);
+
 function calculate(number, operation) {
   console.log("Number: " + number);
   switch (operation) {
@@ -28,9 +33,7 @@ function calculate(number, operation) {
   }
 }
 
-let calculatorControls = document.querySelectorAll(
-  ".calculator__input, .calculator__operator"
-);
+function operationNumber(calculatorOutputNumber, calculatorControlNumber) {}
 
 calculatorControls.forEach(control =>
   control.addEventListener("click", function() {
