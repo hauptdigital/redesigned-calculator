@@ -1,34 +1,35 @@
 function calculate(number, operation) {
+  console.log("Number: " + number);
   switch (operation) {
     case "number":
-      console.log("number");
+      console.log("Operation type: " + operation);
       break;
     case "plus":
-      console.log("plus");
+      console.log("Operation type: " + operation);
       break;
     case "minus":
-      console.log("minus");
+      console.log("Operation type: " + operation);
       break;
     case "plus":
-      console.log("plus");
+      console.log("Operation type: " + operation);
       break;
     case "divide":
-      console.log("divide");
+      console.log("Operation type: " + operation);
       break;
     case "multiply":
-      console.log("multiply");
+      console.log("Operation type: " + operation);
       break;
     case "plus":
-      console.log("plus");
+      console.log("Operation type: " + operation);
       break;
     case "equal":
-      console.log("equal");
+      console.log("Operation type: " + operation);
       break;
     case "clear":
-      console.log("clear");
+      console.log("Operation type: " + operation);
       break;
     case "allclear":
-      console.log("allclear");
+      console.log("Operation type: " + operation);
       break;
   }
 }
@@ -40,7 +41,7 @@ let calculatorControls = document.querySelectorAll(
 calculatorControls.forEach(control =>
   control.addEventListener("click", function() {
     let operation = control.dataset.type;
-    let number = "";
+    let number;
     if (control.dataset.type == "number") {
       number = Number(control.innerHTML);
     }
