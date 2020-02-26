@@ -16,9 +16,6 @@ function calculate(number, operation) {
     case "multiply":
       console.log("Operation type: " + operation);
       break;
-    case "plus":
-      console.log("Operation type: " + operation);
-      break;
     case "equal":
       console.log("Operation type: " + operation);
       break;
