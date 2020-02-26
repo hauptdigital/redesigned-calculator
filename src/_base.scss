@@ -4,10 +4,37 @@
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  height: 100vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+button,
+input {
+  font-size: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: white;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 600px;
-  width: 100%;
+  align-items: center;
 }

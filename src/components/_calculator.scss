@@ -3,18 +3,72 @@
 .calculator {
   display: flex;
   flex-wrap: wrap;
-  max-width: 600px;
-  width: 100%;
+  justify-content: space-between;
+  width: 600px;
+  height: 600px;
+}
+
+.calculator__button-clear {
+  flex-basis: calc(100% / 4 * 3);
+}
+
+.calculator__button-divide {
+  flex-basis: calc(100% / 4);
+}
+
+.calculator__button-number {
+  flex-basis: calc(100% / 4);
+}
+
+.calculator__button-multiply {
+  flex-basis: calc(100% / 4);
+}
+
+.calculator__button-minus {
+  flex-basis: calc(100% / 4);
+}
+
+.calculator__button-plus {
+  flex-basis: calc(100% / 4);
+}
+
+.calculator__button-equal {
+  flex-basis: calc(100% / 4);
+}
+
+.calculator__button--number-zero {
+  flex-basis: calc(100% / 4 * 3);
 }
 
 .calculator__input {
-  flex-basis: calc(100% / 3);
   border-radius: 0px;
   border: none;
-  background-color: lightgrey;
+  background-color: rgb(0, 0, 0, 0.5);
+  color: white;
   outline: none;
+  transition: 0.3s;
+}
+
+.calculator__input:hover {
+  background-color: rgb(0, 0, 0, 0.25);
+}
+
+.calculator__operator {
+  border-radius: 0px;
+  border: none;
+  background-color: rgb(0, 0, 0, 0.75);
+  color: white;
+  outline: none;
+}
+
+.calculator__operator:hover {
+  background-color: rgb(128, 128, 128, 0.5);
 }
 
 .calculator__output {
   flex-basis: 100%;
+  text-align: right;
+  padding-right: 2.75em;
+  border: none;
+  outline: none;
 }
