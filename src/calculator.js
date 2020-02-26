@@ -42,7 +42,7 @@ calculatorControls.forEach(control =>
     let operation = control.dataset.type;
     let number = "";
     if (control.dataset.type == "number") {
-      number = parseInt(control.innerHTML);
+      number = Number(control.innerHTML);
     }
     calculate(number, operation);
   })
