@@ -1,4 +1,5 @@
 const calculatorOutput = document.querySelector("#result");
+calculatorOutput.value = 0;
 const calculatorControls = document.querySelectorAll(
   ".calculator__input, .calculator__operator"
 );
@@ -8,6 +9,7 @@ function calculate(number, operation) {
   switch (operation) {
     case "number":
       console.log("Operation type: " + operation);
+      operationNumber(number);
       break;
     case "plus":
       console.log("Operation type: " + operation);
@@ -26,21 +28,40 @@ function calculate(number, operation) {
       break;
     case "clear":
       console.log("Operation type: " + operation);
+      function operationClear() {
+        calculatorOutput.value = 0;
+      }
       break;
     case "allclear":
       console.log("Operation type: " + operation);
+      operationAllClear();
       break;
   }
 }
 
-function operationNumber(calculatorOutputNumber, calculatorControlNumber) {}
+function operationNumber(calculatorControlNumber) {
+  if (calculatorOutput.value == 0) {
+    calculatorOutput.value = calculatorControlNumber;
+  } else {
+    calculatorOutput.value =
+      "" + calculatorOutput.value + calculatorControlNumber;
+  }
+}
+
+function operationAllClear() {
+  calculatorOutput.value = 0;
+}
+
+function operationClear() {
+  calculatorOutput.value = 0;
+}
 
 calculatorControls.forEach(control =>
   control.addEventListener("click", function() {
     let operation = control.dataset.type;
     let number;
     if (control.dataset.type == "number") {
-      number = Number(control.innerHTML);
+      number = +control.innerHTML;
     }
     calculate(number, operation);
   })
