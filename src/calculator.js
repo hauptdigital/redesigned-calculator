@@ -10,9 +10,6 @@ function calculate(number, operation) {
     case "minus":
       console.log("Operation type: " + operation);
       break;
-    case "plus":
-      console.log("Operation type: " + operation);
-      break;
     case "divide":
       console.log("Operation type: " + operation);
       break;
