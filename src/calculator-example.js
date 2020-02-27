@@ -1,4 +1,4 @@
-"use strict";
+import { add, subtract, divide, multiply } from "./math.js";
 
 /* Define calculator buttons */
 const calculatorCalculateResult = document.querySelector(
@@ -77,16 +77,16 @@ function calculateResult(numberOne, numberTwo, type) {
   numberTwo = calculatorOutput.value;
   switch (type) {
     case "plus":
-      calculatorOutput.value = Number(numberOne) + Number(numberTwo);
+      calculatorOutput.value = add(numberOne, numberTwo);
       break;
     case "minus":
-      calculatorOutput.value = Number(numberOne) - Number(numberTwo);
+      calculatorOutput.value = subtract(numberOne, numberTwo);
       break;
     case "divide":
-      calculatorOutput.value = Number(numberOne) / Number(numberTwo);
+      calculatorOutput.value = divide(numberOne, numberTwo);
       break;
     case "multiply":
-      calculatorOutput.value = Number(numberOne) * Number(numberTwo);
+      calculatorOutput.value = multiply(numberOne, numberTwo);
       break;
   }
   log(type);
