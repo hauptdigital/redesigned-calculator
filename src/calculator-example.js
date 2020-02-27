@@ -1,17 +1,103 @@
 "use strict";
+/* Define calculator buttons */
+const calculatorCalculateResult = document.querySelector(
+  ".calculator__button-equal"
+);
+const calculatorClear = document.querySelector(".calculator__button-clear");
 
 const calculatorOutput = document.querySelector("#result");
-calculatorOutput.value = plus();
+const calculatorInputs = document.querySelectorAll(".calculator__input");
+const calculatorOperators = document.querySelectorAll(".calculator__operator");
 
-function plus(numberOne, numberTwo) {
-  return numberOne + numberTwo;
+/* Set initial values */
+let numberOne = 0;
+let numberTwo = 0;
+let type = "";
+
+function clearField() {
+  calculatorOutput.value = 0;
 }
-function minus(numberOne, numberTwo) {
-  return numberOne - numberTwo;
+
+function resetCalculation() {
+  numberOne = 0;
+  numberTwo = 0;
+  type = "";
+  calculatorOutput.value = 0;
+  log(type);
 }
-function divide(numberOne, numberTwo) {
-  return numberOne / numberTwo;
+
+/* log */
+
+function log(type) {
+  console.log("Type: " + type);
+  console.log("numberOne: " + numberOne);
+  console.log("numberTwo: " + numberTwo);
+  console.log("calculatorOutput.value: " + calculatorOutput.value);
 }
-function multiply(numberOne, numberTwo) {
-  return numberOne * numberTwo;
+
+/* Bind events to inputs */
+
+function addInputEventListener(calculatorInput) {
+  function handleCalculatorInputClick() {
+    if (calculatorOutput.value == 0) {
+      calculatorOutput.value = calculatorInput.innerText;
+    } else {
+      calculatorOutput.value =
+        "" + calculatorOutput.value + calculatorInput.innerText;
+    }
+    log(calculatorInput.dataset.type);
+  }
+
+  calculatorInput.addEventListener("click", handleCalculatorInputClick);
 }
+
+calculatorInputs.forEach(addInputEventListener);
+
+/* Bind events to operators*/
+
+function addOperatorEventListener(calculatorOperator) {
+  function handleCalculatorOperatorClick() {
+    /* save old number and operation type */
+    numberOne = calculatorOutput.value;
+    numberTwo = 0;
+    type = calculatorOperator.dataset.type;
+    clearField();
+    log(calculatorOperator.dataset.type);
+  }
+
+  calculatorOperator.addEventListener("click", handleCalculatorOperatorClick);
+}
+
+calculatorOperators.forEach(addOperatorEventListener);
+
+/* Bind event to equal button */
+
+function calculateResult(numberOne, numberTwo, type) {
+  numberTwo = calculatorOutput.value;
+  switch (type) {
+    case "plus":
+      calculatorOutput.value = Number(numberOne) + Number(numberTwo);
+      break;
+    case "minus":
+      calculatorOutput.value = Number(numberOne) - Number(numberTwo);
+      break;
+    case "divide":
+      calculatorOutput.value = Number(numberOne) / Number(numberTwo);
+      break;
+    case "multiply":
+      calculatorOutput.value = Number(numberOne) * Number(numberTwo);
+      break;
+  }
+  log(type);
+}
+
+calculatorCalculateResult.addEventListener("click", function() {
+  calculateResult(numberOne, numberTwo, type);
+});
+
+/* Bind event to clear button */
+
+calculatorClear.addEventListener("click", resetCalculation);
+
+/* Initial reset of field on load */
+clearField();
