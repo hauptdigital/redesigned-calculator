@@ -1,4 +1,4 @@
-let calcinputs = document.querySelector(".calculator__input");
+// let calcinputs = document.querySelector(".calculator__input");
 const calculatorOutput = document.querySelector("#result");
 calculatorOutput.value = 0;
 const calculatorControls = document.querySelectorAll(
