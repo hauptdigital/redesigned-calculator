@@ -1,4 +1,5 @@
 "use strict";
+
 /* Define calculator buttons */
 const calculatorCalculateResult = document.querySelector(
   ".calculator__button-equal"

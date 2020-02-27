@@ -38,3 +38,11 @@ h5 {
   justify-content: center;
   align-items: center;
 }
+
+/* Fix display on Safari */
+
+button,
+input {
+  margin: 0;
+  padding: 0;
+}
