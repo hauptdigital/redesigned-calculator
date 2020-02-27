@@ -1,11 +1,10 @@
-import { add, subtract, divide, multiply } from "./math.js";
+import { calculateResult } from "./math.js";
 
 /* Define calculator buttons */
 const calculatorCalculateResult = document.querySelector(
   ".calculator__button-equal"
 );
 const calculatorClear = document.querySelector(".calculator__button-clear");
-
 const calculatorOutput = document.querySelector("#result");
 const calculatorInputs = document.querySelectorAll(".calculator__input");
 const calculatorOperators = document.querySelectorAll(".calculator__operator");
@@ -73,28 +72,13 @@ calculatorOperators.forEach(addOperatorEventListener);
 
 /* Bind event to equal button */
 
-function calculateResult(numberOne, numberTwo, type) {
+function handleResultClick() {
   numberTwo = calculatorOutput.value;
-  switch (type) {
-    case "plus":
-      calculatorOutput.value = add(numberOne, numberTwo);
-      break;
-    case "minus":
-      calculatorOutput.value = subtract(numberOne, numberTwo);
-      break;
-    case "divide":
-      calculatorOutput.value = divide(numberOne, numberTwo);
-      break;
-    case "multiply":
-      calculatorOutput.value = multiply(numberOne, numberTwo);
-      break;
-  }
+  calculatorOutput.value = calculateResult(numberOne, numberTwo, type);
   log(type);
 }
 
-calculatorCalculateResult.addEventListener("click", function() {
-  calculateResult(numberOne, numberTwo, type);
-});
+calculatorCalculateResult.addEventListener("click", handleResultClick);
 
 /* Bind event to clear button */
 
