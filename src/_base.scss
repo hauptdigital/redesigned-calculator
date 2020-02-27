@@ -39,9 +39,28 @@ h5 {
   align-items: center;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
+/* Desktop */
+
+@media (min-width: 768px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  .row-column {
+    flex-basis: 50%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .row-column {
+    flex-basis: 100%;
+  }
 }
 
 /* Fix display on Safari */

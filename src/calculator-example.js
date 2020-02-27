@@ -1,4 +1,5 @@
 import { calculateResult } from "./math.js";
+import { addLogEntry } from "./log.js";
 
 /* Define calculator buttons */
 const calculatorCalculateResult = document.querySelector(
@@ -8,11 +9,12 @@ const calculatorClear = document.querySelector(".calculator__button-clear");
 const calculatorOutput = document.querySelector("#result");
 const calculatorInputs = document.querySelectorAll(".calculator__input");
 const calculatorOperators = document.querySelectorAll(".calculator__operator");
+export const calculatorLog = document.querySelector(".log");
 
 /* Set initial values */
-let numberOne = 0;
-let numberTwo = 0;
-let type = "";
+export let numberOne = 0;
+export let numberTwo = 0;
+export let type = "";
 
 function clearField() {
   calculatorOutput.value = 0;
@@ -75,7 +77,8 @@ calculatorOperators.forEach(addOperatorEventListener);
 function handleResultClick() {
   numberTwo = calculatorOutput.value;
   calculatorOutput.value = calculateResult(numberOne, numberTwo, type);
-  log(type);
+  addLogEntry(numberOne, numberTwo, type, calculatorOutput.value);
+  // log(type);
 }
 
 calculatorCalculateResult.addEventListener("click", handleResultClick);

@@ -7,7 +7,6 @@
   height: 400px;
   width: 100%;
   max-width: 600px;
-  flex-basis: 50%;
 }
 
 .calculator__button-clear {
@@ -79,4 +78,20 @@
   border: none;
   outline: none;
   transition: 1s;
+}
+
+/* Desktop */
+
+@media (min-width: 768px) {
+  .calculator {
+    order: 2;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .calculator {
+    order: 1;
+  }
 }
