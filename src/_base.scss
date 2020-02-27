@@ -14,7 +14,7 @@ body {
     #e1306c,
     #fd1d1d
   );
-  height: 100vw;
+  height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -37,4 +37,12 @@ h5 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Fix display on Safari */
+
+button,
+input {
+  margin: 0;
+  padding: 0;
 }
