@@ -39,6 +39,11 @@ h5 {
   align-items: center;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Fix display on Safari */
 
 button,

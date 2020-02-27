@@ -4,9 +4,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 600px;
+  height: 400px;
   width: 100%;
   max-width: 600px;
+  flex-basis: 50%;
 }
 
 .calculator__button-clear {
@@ -74,7 +75,7 @@
 .calculator__output {
   flex-basis: 100%;
   text-align: right;
-  padding-right: 2.75em;
+  padding-right: 1.125em;
   border: none;
   outline: none;
   transition: 1s;

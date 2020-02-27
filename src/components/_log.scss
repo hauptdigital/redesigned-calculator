@@ -1,0 +1,14 @@
+@use '../base.scss';
+
+.log {
+  flex-basis: 50%;
+}
+
+.log__title {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 66.6px;
+}
