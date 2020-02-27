@@ -1,4 +1,4 @@
-import { calculatorLog } from "./calculator-example.js";
+const calculatorLog = document.querySelector(".log");
 
 export function addLogEntry(numberOne, numberTwo, type, result) {
   let operator = "";
@@ -17,11 +17,13 @@ export function addLogEntry(numberOne, numberTwo, type, result) {
       break;
   }
 
-  let newLogEntry = document.createElement("div");
-  newLogEntry.className = "log__entry";
-  let newLogEntryContent = document.createTextNode(
+  let LogEntry = document.createElement("div");
+  LogEntry.className = "log__entry";
+
+  let LogEntryContent = document.createTextNode(
     numberOne + " " + operator + " " + numberTwo + " = " + result
   );
-  newLogEntry.appendChild(newLogEntryContent);
-  calculatorLog.insertBefore(newLogEntry, null);
+
+  LogEntry.appendChild(LogEntryContent);
+  calculatorLog.insertBefore(LogEntry, null);
 }
